@@ -2,7 +2,8 @@
 include("util.php");
 $conn = conecta();
 ini_set ( 'display_errors' , 1); 
-error_reporting (E_ALL);  
+error_reporting (E_ALL); 
+include("cabecalho1.php"); 
 echo
 "
 <!DOCTYPE html>
@@ -22,10 +23,10 @@ echo
     
 </head>
 <body>
-<!--CabeÃƒÂ§alho-->
+<!--CabeÃ§alho-->
 
     <main>
-        <div class='titulo_pagina'><h2>CatÃ¡logo</h2></div>
+        <div class='titulo_pagina'><h2>Catálogo</h2></div>
 
         <div class='produtos'>
 ";
@@ -97,9 +98,9 @@ echo
        <div class='footer-col'>
          <h4>A Empresa</h4>
          <ul>
-           <li><a href='sobre.html'>Sobre nÃ³s</a></li>
+           <li><a href='sobre.html'>Sobre nós</a></li>
            <li><a href='devs.html'>Desenvolvedores</a></li>
-           <li><a href='#'>PolÃ­tica de privacidade</a></li>
+           <li><a href='#'>Política de privacidade</a></li>
          </ul>
        </div>
        <div class='footer-col'>
@@ -107,9 +108,9 @@ echo
          <ul>
            <li><a href='#'>Perguntas frequentes</a></li>
            <li><a href='#'>Envio</a></li>
-           <li><a href='#'>DevoluÃ§Ãµes</a></li>
+           <li><a href='#'>Devoluções</a></li>
            <li><a href='#'>Status de pedido</a></li>
-           <li><a href='#'>OpÃ§Ãµes de pagamento</a></li>
+           <li><a href='#'>Opções de pagamento</a></li>
          </ul>
        </div>
        <div class='footer-col'>

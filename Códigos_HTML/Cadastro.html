@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>Cadastro</title>
+    <!-- CSS/Fontes -->
+    <link rel='stylesheet' href='estilologin.css'/>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Bungee&display=swap' rel='stylesheet'> 
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap' rel='stylesheet'> 
+  </head>
+  <body>
+    <script type="text/javascript" src="Cadastro.js">
+    </script>
+  
+    <!---Container -->
+    <div class='container'>
+      <div class='caixa'>
+        <div class='conteudo'>
+            <div id='head_cadastrophone'><h2>Seja<hr id="bemvindo">Bem-vindo!</h2></div>
+            <div id='head_cadastro'><h2>Seja bem vindo!</h2></div>
+          <form id='form_cadastro' method='post' action='cadastro_usuario.php'>
+          <div class='grid_cadastro'>
+            <div class='container_input_cadastro' id='nome' >
+              <label for='nome' id="labelnome">Nome</label>
+                <input class='esquerda required'
+                type='text'
+                name='nome'
+                placeholder='Nome'
+                aria-label='Login'
+                autocomplete off
+                tabindex='1'
+              />
+              <span class="span_invalido">Insira um nome válido.</span>
+            </div>
+            <div class='container_input_cadastro' id='CPF'>
+              <label for='CPF' class='$erro_CPF'>CPF</label>
+              <input class='direita required'
+              type='text'
+              name='CPF'
+              placeholder='CPF'
+              aria-label='Login'
+              autocomplete=off
+              maxlength='11'
+              tabindex='4'
+              />
+              <span class="span_invalido">Insira um CPF válido (xxx.xxx.xxx-xx).</span>
+            </div>
+              <div class='container_input_cadastro' id='email'>
+              <label for='Email' class='$erro_email'>E-mail</label>
+              <input class='esquerda required'
+                type='text'
+                name='email'
+                tabindex='2'
+                placeholder='E-mail'
+                aria-label='Login'
+              />
+              <span class="span_invalido">Insira um e-mail válido.</span>
+              </div>
+            <div class='container_input_cadastro' id='senha'>
+              <label for='password' class='$erro_senha' id='label_d'>Senha</label>
+              <input class='direita required senhainp'
+                type='password'
+                name='senha'
+                placeholder='Senha'
+                aria-label='Password'
+                tabindex='5'
+              />
+              <span class="span_invalido">A senha deve ter 8 caracteres no mínimo.</span>
+            </div>
+            <div class='container_input_cadastro' id='telefone'>
+            <label for='Telefone' class='$erro_tel'>Telefone</label>
+            <input class='esquerda required'
+              type='text'
+              name='telefone'
+              placeholder='Telefone'
+              aria-label='Login'
+              autocomplete='nickname'
+              maxlength='14'
+              tabindex='3'
+            />
+            <span class="span_invalido">Insira um telefone celular válido.</span>
+            </div>
+            <div class='container_input_cadastro' id='confirme'>
+              <label for='confirma_senha' class='$erro_conf'>Confirme a senha</label>
+              <input class='direita required'
+                type='password'
+                name='confirma_senha'
+                placeholder='Confirme a senha'
+                aria-label='Password'
+                tabindex='6'
+              />
+              <span class="span_invalido">As senhas não coincidem</span>
+            </div>
+          </form>
+          <div class='extra_cadastro'>
+              <div class='botoes_cadastro' >               
+                    <div class="btn_criarconta">
+                      <input type="submit" value="Criar conta">
+                      <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 
+                          4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 
+                          12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 
+                          12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.
+                          997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+                        </svg>
+                      </div>
+                      <input type="button" value="Já tenho conta" onclick='window.location.href="../LoginAtualizado/login.php"'>
+                      <input type="button" value="Voltar para o início" onclick='window.location.href="../index.php"'>
+                </div>
+              </div>
+          </div>
+          </div> <!--Conteudo-->
+        </div>   
+      </div><!--Caixa-->
+      <footer class='footer'>
+        <div class='container'>
+         <div class='roww'>
+           <div class='footer-col'>
+             <h4>A Empresa</h4>
+             <ul>
+               <li><a href='sobre.php'>Sobre nós</a></li>
+               <li><a href='devs.php'>Desenvolvedores</a></li>
+               <li><a href='https://linktr.ee/doitplanners'>Siga nossas redes sociais!</a></li>
+             </ul>
+           </div>
+           <div class='footer-col'>
+             <h4>Conheça mais</h4>
+             <ul>
+              <li><a href='https://www.cti.feb.unesp.br'>Nosso colégio</a></li>
+              <li><a href='https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM5NDg2NjI4NTExNjM2?igshid=MWlyamF0NHFicm5mag=='
+               >Conheça a Viva CTI</a></li>
+               <li><a href='https://wa.link/m4v06v'>Nossos patrocinadores</a></li>
+             </ul>
+           </div>
+           <div class='footer-col'>
+           <h4>Patrocinador:</h4>
+           <a href='https://wa.link/m4v06v'><img class='Gi' src='../Imagens/GISEMFUNDO.png' alt='Gi Copiadoras'></a>
+          </div>      
+    </div>
+    <!-- Container -->
+  </body>
+</html>

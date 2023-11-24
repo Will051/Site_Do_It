@@ -141,7 +141,7 @@ if (isset($_GET['compra_falhou']) && $_GET['compra_falhou'] === 'true') {
     $total=null;
     } else
     if ($operacao == 'fechar') {
-       // Verificar se h√° produtos suficientes em estoque
+       // Verificar se h· produtos suficientes em estoque
     $produtosNoCarrinho = $conn->query("SELECT cod_produto, qtde FROM tbl_carrinho WHERE cod_compra = $codigoCompra");
 
     $estoqueSuficiente = true;
@@ -169,12 +169,12 @@ if (isset($_GET['compra_falhou']) && $_GET['compra_falhou'] === 'true') {
             ExecutaSQL($conn, "UPDATE tbl_produto SET quantidade = quantidade - $quantidadeNoCarrinho WHERE cod_produto = $codigoProduto");
         }
 
-        // Aqui voc√™ pode definir o status da compra como "Conclu√≠da" e fazer outros procedimentos necess√°rios.
+        // Aqui vocÍ pode definir o status da compra como "ConcluÌda" e fazer outros procedimentos necess·rios.
         // ...
     header("Location: fim.html");
     exit; 
     } else {
-        // Se n√£o houver estoque suficiente, exiba uma mensagem de erro.
+        // Se n„o houver estoque suficiente, exiba uma mensagem de erro.
     header("Location: carrinho.php?compra_falhou=true");
     exit; 
     }
@@ -223,7 +223,7 @@ if (isset($_GET['compra_falhou']) && $_GET['compra_falhou'] === 'true') {
                  <div class='head'>
                      <div class='alinhamento'>
                          <div class='produto'>Produto</div>
-                         <div class='preco'>Pre√É¬ßo</div>
+                         <div class='preco'>Pre√ßo</div>
                          <div class='qtd'>Quantidade</div>
                          <div class='total'>Total</div>
                          <div class='nada'>-</divm>

@@ -1,71 +1,103 @@
 <?php 
 ////////////////////////////////////////////////////////////////
-function EnviaEmail ( $pEmailDestino, $pAssunto, $pHtml, $pRemetente )   
-{
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
- 
- require "PHPMailer/PHPMailerAutoload.php";
+function CriaPDF ( $paramTitulo, $paramHtml, $paramArquivoPDF )
+  {
+   $arq = false;     
+   try {  
+    require "html_table.php"; 
+    // abre classe fpdf estendida com recurso que converte <table> em pdf
+  
+    $pdf = new PDF();  
+    // cria um novo objeto $pdf da classe 'pdf' que estende 'fpdf' em 'html_table.php'
+    $pdf->AddPage();  // cria uma pagina vazia
+    $pdf->SetFont('helvetica','B',20);       
+    $pdf->Write(5,$paramTitulo);    
+    $pdf->SetFont('helvetica','',8);     
+    $pdf->WriteHTML($paramHtml); // renderiza $html na pagina vazia
+    ob_end_clean();    
+    // fpdf requer tela vazia, essa instrucao 
+    // libera a tela antes do output
     
- try {
+    // gerando um arquivo 
+    $pdf->Output($paramArquivoPDF,'F');
+    // gerando um download 
+    $pdf->Output('D',$paramArquivoPDF);  // disponibiliza o pdf gerado pra download
+    $arq = true;
+   } catch (Exception $e) {
+     echo $e->getMessage(); // erros da aplicação - gerais
+   }
+   return $arq;
+  }
 
- //cria instancia de phpmailer
- echo "<br>Tentando enviar para ".$pEmailDestino."...";
- $mail = new PHPMailer(); 
- $mail->IsSMTP();  
- 
- // servidor smtp
- //$mail->SMTPDebug = SMTP::DEBUG_SERVER;   // use se tiver problemas, ele lista toda a transacao com o servidor
- $mail->Host = "smtp....";
- $mail->SMTPAuth = true;      // requer autenticacao com o servidor                         
- $mail->SMTPSecure = 'tls';                            
-     
- $mail-> SMTPOptions = array (
-   'ssl' => array (
-   'verificar_peer' => false,
-   'verify_peer_name' => false,
-   'allow_self_signed' => true ) );
-     
- $mail->Port = 587;      
+
+function EnviaEmail ($pEmailDestino, $pAssunto, $pHtml, $pUsuario = "mipron@projetoscti.com.br" )   
+  {
     
- $mail->Username = "...@..."; 
- $mail->Password = "..."; 
- $mail->From = "...@..."; 
- $mail->FromName = "Suporte de senhas"; 
+   // troque usuario e senha !!!! 
+   error_reporting(E_ALL);
+   ini_set("display_errors", 1);
+  
+   require "PHPMailer/PHPMailer/PHPMailerAutoload.php";
+      
+   try {
  
- $mail->AddAddress($pEmailDestino, "Usuario"); 
- $mail->IsHTML(true); 
- $mail->Subject = "Nova Senha !"; 
- $mail->Body = $pHtml;
- $enviado = $mail->Send(); 
-     
- if (!$enviado) {
-    echo "<br>Erro: " . $mail->ErrorInfo;
- } else {
-    echo "<br><b>Enviado!</b>";
- }
- return $enviado;         
-     
- } catch (phpmailerException $e) {
-   echo $e->errorMessage(); // erros do phpmailer
- } catch (Exception $e) {
-   echo $e->getMessage(); // erros da aplicaÃ§Ã£o - gerais
- }       
- 
-}
+     //cria instancia de phpmailer
+     echo "<br>Tentando enviar para ".$pEmailDestino."...";
+     $mail = new PHPMailer(); 
+     $mail->IsSMTP();  
+  
+     // servidor smtp
+     $mail->Host = "smtp.projetoscti.com.br";
+     $mail->SMTPAuth = true;      // requer autenticacao com o servidor                         
+     $mail->SMTPSecure = 'tls';                            
+      
+     $mail-> SMTPOptions = array (
+       'ssl' => array (
+       'verificar_peer' => false,
+       'verify_peer_name' => false,
+       'allow_self_signed' => true ) );
+      
+     $mail->Port = 587;      
+      
+     $mail->Username = $pUsuario; 
+     $mail->Password = "M1#pr0n2023"; 
+     $mail->From = $pUsuario; 
+     $mail->FromName = "Do It LTDA. suporte"; 
+  
+     $mail->AddAddress($pEmailDestino, "Usuario"); 
+     $mail->IsHTML(true); 
+     $mail->Subject = $pAssunto; 
+     $mail->Body = $pHtml;
+     $enviado = $mail->Send(); 
+       
+     if (!$enviado) {
+        echo "<br>Erro: " . $mail->ErrorInfo;
+        echo "<br>Voltar para a home: <a href='eco.php'>Home</a>";
+      } else {
+        echo "<br><b>Enviado!</b>";
+        echo "<br>Voltar para a home: <a href='eco.php'>Home</a>";
+      }
+     return $enviado;         
+      
+   } catch (phpmailerException $e) {
+     echo $e->errorMessage(); // erros do phpmailer
+   } catch (Exception $e) {
+     echo $e->getMessage(); // erros da aplica  o - gerais
+   }      
+  }
 
 
 /**
-* FunÃ§Ã£o para executasql frases sql
+* Fun��o para executasql frases sql
 * marcelo c peres - 2023
-* FunÃ§Ã£o para gerar senhas aleatÃ³rias
+* Fun��o para gerar senhas aleat�rias
 *
 * @author    Thiago Belem <contato@thiagobelem.net>
 *
 * @param integer $tamanho Tamanho da senha a ser gerada
-* @param boolean $maiusculas Se terÃ¡ letras maiÃºsculas
-* @param boolean $numeros Se terÃ¡ nÃºmeros
-* @param boolean $simbolos Se terÃ¡ sÃ­mbolos
+* @param boolean $maiusculas Se ter� letras mai�sculas
+* @param boolean $numeros Se ter� n�meros
+* @param boolean $simbolos Se ter� s�mbolos
 *
 * @return string A senha gerada
 */
@@ -94,6 +126,16 @@ $retorno .= $caracteres[$rand-1];
 return $retorno;
 }
 
+function VerificaSQL( $paramConn, $paramSQL ) 
+  {
+    $execucao = $paramConn->query($paramSQL);
+
+    if ($execucao->rowCount() > 0) { 
+        return TRUE; 
+    } else { 
+        return FALSE; 
+    }  
+  }
 
 ////////////////////////////////////////////////////////////////
 function ExecutaSQL( $paramConn, $paramSQL ) 
@@ -109,7 +151,7 @@ function ExecutaSQL( $paramConn, $paramSQL )
    
 
   /*
-  * Funï¿½ï¿½o para executasql frases sql
+  * Fun  o para executasql frases sql
   * marcelo c peres - 2023
   */
 
@@ -134,19 +176,20 @@ function ExecutaSQL( $paramConn, $paramSQL )
 
 
   /**
-  * Funï¿½ï¿½o para gerar senhas aleatï¿½rias
+  * Fun  o para gerar senhas aleat rias
   *
   * @author    Thiago Belem <contato@thiagobelem.net>
   *
   * @param integer $tamanho Tamanho da senha a ser gerada
-  * @param boolean $maiusculas Se terï¿½ letras maiï¿½sculas
-  * @param boolean $numeros Se terï¿½ nï¿½meros
-  * @param boolean $simbolos Se terï¿½ sï¿½mbolos
+  * @param boolean $maiusculas Se ter  letras mai sculas
+  * @param boolean $numeros Se ter  n meros
+  * @param boolean $simbolos Se ter  s mbolos
   *
   * @return string A senha gerada
   */
 
   //////  funcao de conexao
+  
   //////  14-8-2023
   ////////////////////////////////////////////////////////////////
   function conecta ($params = "")  // igual a nada pra indicar q aceita vazio !! 
@@ -171,7 +214,7 @@ function ExecutaSQL( $paramConn, $paramSQL )
   function funcaoLogin ($paramLogin, $paramSenha, $paramAdmin)  
   {
    $conn = conecta();  
-   $varSQL = "select senha, administrador, usuario from tbl_usuario 
+   $varSQL = "select senha, administrador from tbl_usuario 
                where email = '$paramLogin'"; 
    $linha =  $conn->query($varSQL)->fetch();
    if (!$linha)
@@ -183,16 +226,14 @@ function ExecutaSQL( $paramConn, $paramSQL )
     $paramAdmin = $linha['administrador'] == false;
     return $linha['senha'] == $paramSenha;
    }
-  
-  }
-
+}
   //////  funcao de definir cookie
   //////  11-9-2023
 
   ////////////////////////////////////////////////////////////////
-  /*function DefineCookie($paramNome, $paramValor, $paramMinutos) 
+  function DefineCookie($paramNome, $paramValor, $paramMinutos) 
   {
    echo "Cookie: $paramNome Valor: $paramValor";  
    setcookie($paramNome, $paramValor, time() + $paramMinutos * 60); 
-  }*/
+  }
 ?>

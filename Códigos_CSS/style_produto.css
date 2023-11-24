@@ -255,3 +255,57 @@ ul {
     color: rgba(254, 201, 0, 0.9647058824);
   }
 }/*# sourceMappingURL=style_produto.css.map */
+/*cabecalho*/
+.navmenu{
+  display: flex;
+}
+.navmenu a{
+  color: #2c2c2c;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+.navmenu a:hover{
+  color: white;
+}
+.nav-icon a{
+  color: #2c2c2c;
+  padding: 18px;
+  display: flexbox;
+}
+.nav-icon a:hover{
+  color: white;
+}
+#header1{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background-color: #ffcc00ff;
+}  
+li.logo{
+  padding: 0 15% 0 5%;
+}
+.logo img{
+  padding-left: 100px;
+  width: 45px;
+  height: 50px;
+  margin-left: 157px;
+}

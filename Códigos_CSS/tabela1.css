@@ -1,0 +1,98 @@
+
+body {
+    background-color: #f8fcfb;
+}
+
+.table {
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 1600px;
+    display: grid;
+    background-color: #fec900f6;
+    color: #fffffff6;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.row {
+    display: block;
+}
+
+.cell {
+    display: inline-block;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 10pt;
+    border-radius: 5px;
+    /* height: 100px; */
+    text-align: center;
+}
+
+.cellCabeca {
+    text-align: center !important;
+}
+
+.cod-usuario {
+    width: 100px;
+}
+
+.nome {
+    width: 250px;
+}
+
+.email {
+    width: 200px;
+}
+
+.senha {
+    width: 200px;
+}
+
+.telefone {
+    width: 150px;
+}
+
+.cpf {
+    width: 100px;
+}
+
+.opcoes {
+    width: 150px;
+}
+
+.endereco {
+    width: 100px;
+}
+
+.adm {
+    width: 100px;
+}
+
+.cab {
+    background: #6892D5;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.opcoes a,
+.opcoes a:link,
+.opcoes a:visited {
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #ffe573;
+    padding: 2px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.opcoes a:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+}
