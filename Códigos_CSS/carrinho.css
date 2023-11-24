@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ececec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body > header {
+  background: gold;
+  color: black;
+  font-size: 24px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+body button {
+  cursor: pointer;
+  text-decoration: none;
+}
+body > main {
+  background: #ececec;
+  padding: 120px 30px 30px;
+}
+body > main .page-title {
+  background: #ececec;
+  font-size: 35px;
+  padding: 50px 0;
+  text-align: center;
+}
+body > main .content {
+  background: #ececec;
+  display: flex;
+}
+body > main .content section {
+  flex: 1;
+}
+body > main .content aside {
+  min-width: 250px;
+}
+body .table {
+  display: inline-block;
+  background: #ececec;
+  width: 100%;
+  border-collapse: collapse;
+}
+body .table .head {
+  width: 80%;
+}
+body .table .head .alinhamento {
+  text-align: left;
+  padding-bottom: 30px;
+  color: #666;
+}
+body .table .head .alinhamento .produto {
+  position: absolute;
+  left: 100px;
+}
+body .table .head .alinhamento .preco {
+  position: absolute;
+  left: 400px;
+}
+body .table .head .alinhamento .qtd {
+  position: absolute;
+  left: 600px;
+}
+body .table .head .alinhamento .total {
+  position: absolute;
+  left: 800px;
+}
+body .table .head .alinhamento .nada {
+  position: absolute;
+  left: 920px;
+}
+body .table .body .linha .product {
+  border-bottom: 3px solid rgb(167, 127, 27);
+  width: 80%;
+  padding: 3% 1px;
+  display: flex;
+  align-items: center;
+
+}
+body .table .body .linha .product img {
+  border-radius: 6px;
+  height: 10%;
+  width: 15%;
+}
+body .table .body .linha .product .info {
+  width: 100%;
+  margin-left: 20px;
+}
+body .table .body .linha .product .info .nome {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+body .table .body .linha .product .info .categoria {
+  padding: 0 0 10%;
+  color: #666;
+}
+body .table .body .linha .product .alinhamento {
+  position: absolute;
+}
+body .table .body .linha .product .preco {
+  font-size: 20px;
+  position: absolute;
+  left: 360px;
+}
+body .table .body .linha .product .total {
+  font-size: 20px;
+  position: absolute;
+  left: 770px;
+}
+body .table .body .linha .product #remove {
+  background: transparent;
+  border: 0;
+}
+body .table .body .linha .product .remove {
+  position: absolute;
+  left: 876px;
+  background: #dde;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+body .table .body .linha .product .remove:hover {
+  background: #ccc;
+}
+body .table .body .linha .product .qty {
+  position: absolute;
+  left: 565px;
+  background: #dde;
+  display: inline-flex;
+  padding: 5 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+  text-decoration: none;
+}
+body .table .body .linha .product .qty span {
+  margin: 0 10px;
+}
+body .table .body .linha .product .qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+body .table .body .linha .product .qty button:hover {
+  background: #ccc;
+}
+
+.qty .remove
+{
+	color: gray;
+}
+
+aside {
+  margin-left: 30px;
+  position: absolute;
+  right: 1%;
+  top: 179px;
+}
+aside .box {
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  margin-right: 5%;
+  background: #ddd;
+  color: #333;
+}
+aside .box header {
+  padding: 15px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+aside .box .info {
+  padding: 20px;
+}
+aside .box footer {
+  padding: 15px 20px;
+  background: #ccc;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+aside .box footer span {
+  color: rgba(0, 0, 0, 0.9);
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+aside .box .info > div:last-child {
+  margin: 0;
+}
+aside .box button {
+  color: rgb(14, 158, 14);
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+aside .box i {
+  font-size: 18px;
+}
+aside > button {
+  color: white;
+  border: 0;
+  padding: 15px 0;
+  background: rgb(14, 158, 14);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  width: 95%;
+}
+aside > button a{
+  color: #fff;
+}
+aside > button:hover {
+  background: rgb(1, 181, 1);
+}/*# sourceMappingURL=styles.css.map */
+* {
+  text-decoration: none;
+}
+.navmenu{
+  display: flex;
+}
+.navmenu a{
+  color: #2c2c2c;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: all .42s ease;
+}
+.navmenu a:hover{
+  color: white;
+}
+.nav-icon a{
+  color: #2c2c2c;
+  padding: 10px;
+  display: flexbox;
+}
+.nav-icon a:hover{
+  color: white;
+}
+#header1{
+  position: fixed;
+  width: 10%;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+header {
+  position: fixed;
+  width: 98%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 1%;
+  background-color: #ffcc00ff;
+}
+*{
+  text-decoration: none;
+} 
+li.logo{
+  padding: 0 15% 0 30%;
+}
+li{
+  list-style: none;
+}
+.logo img{
+  width: 45px;
+  height: 50px;
+  background-color: #ffcc00ff;
+
+}
+
