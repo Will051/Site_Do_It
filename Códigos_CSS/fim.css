@@ -1,0 +1,76 @@
+body {
+  background-color: #fec900f6;
+}
+body .space {
+  display: inline-block;
+  width: 35%;
+}
+body .space2 {
+  display: inline-block;
+  width: 25%;
+}
+body .space3 {
+  display: inline-block;
+  width: 24%;
+}
+body .space4 {
+  display: inline-block;
+  width: 35%;
+}
+body main {
+  border: 3px solid black;
+  background: rgba(242, 242, 242, 0.9490196078);
+  position: absolute;
+  border-radius: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 70%;
+  padding-top: 30%;
+}
+body main .check {
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  width: 70%;
+}
+body main .check .bxs-check-circle {
+  color: rgb(0, 201, 44);
+  font-size: 110px;
+}
+body main .check button {
+  position: absolute;
+  left: 72%;
+  top: -60%;
+  background: transparent;
+  border: 0;
+}
+body main .check button .bxs-x-circle {
+  position: absolute;
+}
+body main .check button .bxs-x-circle:hover {
+  color: red;
+}
+body main h1 {
+  position: absolute;
+  top: 40%;
+  left: 29%;
+  font-size: 40px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  text-transform: uppercase;
+  color: rgb(249, 197, 102);
+  font-family: Arial, Helvetica, sans-serif;
+}
+body main .agradec {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: rgba(219, 219, 219, 0.9764705882);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  position: absolute;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 75%;
+}/*# sourceMappingURL=fim.css.map */

@@ -1,0 +1,379 @@
+@charset "UTF-8";
+/* Variáveis */
+* {
+  margin: 0;
+}
+
+.caixa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.span_invalido, .jaexiste {
+  color: rgb(222, 0, 0);
+  display: none;
+}
+
+.conteudo {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #form_cadastro {
+    margin-top: 0;
+  }
+}
+
+#head_cadastro, #head_login, #head_cadastrophone {
+  font-family: "Bungee", cursive;
+  color: rgba(254, 201, 0, 0.9647058824);
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  font-size: 100%;
+  font-size: xx-large;
+  z-index: 2;
+  margin-bottom: 0 !important;
+}
+
+#bemvindo {
+  line-height: 10pt;
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  #head_cadastro {
+    display: none;
+  }
+}
+
+#head_cadastrophone {
+  display: none;
+}
+@media (max-width: 768px) {
+  #head_cadastrophone {
+    display: block;
+  }
+}
+
+.span_invalido {
+  font-family: "Jost", sans-serif;
+  font-size: medium;
+}
+
+.grid_cadastro, .grid_login {
+  display: grid;
+  font-family: "Jost", sans-serif;
+  font-weight: 900;
+  font-size: 120%;
+  border-radius: 8px;
+  background-color: rgba(254, 201, 0, 0.9647058824);
+  box-shadow: 10px 10px 8px grey;
+}
+
+.grid_cadastro {
+  grid-template-columns: repeat(2, 40ex);
+  grid-template-rows: repeat(5, 12ex) 4ex;
+}
+@media (max-width: 768px) {
+  .grid_cadastro {
+    transform: scale(0.7);
+    grid-template-rows: repeat(5, 15ex) 5ex;
+    grid-template-columns: repeat(2, 35ex);
+    font-size: large;
+  }
+  .grid_cadastro input[type=text], .grid_cadastro input[type=password] {
+    height: 25%;
+  }
+  .grid_cadastro label {
+    align-self: center;
+  }
+}
+
+.grid_login {
+  grid-template-columns: repeat(2, 30ex);
+  grid-template-rows: repeat(4, 12ex);
+}
+@media (max-width: 768px) {
+  .grid_login {
+    transform: scale(0.75);
+    grid-template-rows: repeat(4, 15ex);
+    grid-template-columns: repeat(2, 25ex);
+  }
+}
+
+.container_input_cadastro {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1%;
+}
+.container_input_cadastro a {
+  visibility: hidden;
+}
+
+label {
+  font-size: x-large;
+}
+
+input {
+  position: relative;
+  padding: 5%;
+  margin-right: 1%;
+  width: auto;
+  font-family: "Jost", sans-serif;
+  font-size: x-large;
+  padding-left: 25px;
+}
+input:not(input[type=submit]) {
+  border-radius: 8px;
+  height: 15%;
+}
+@media (max-width: 768px) {
+  input:not(input[type=submit]) {
+    height: 45%;
+  }
+}
+
+.grid_login #senha_login, .grid_login #login {
+  width: 150%;
+}
+
+#senha {
+  grid-area: 2/2/2/2;
+}
+
+#confirme {
+  grid-area: 3/2/3/2;
+}
+
+#CPF {
+  grid-area: 1/2/1/2;
+}
+
+#nome {
+  grid-area: 1/1/1/1;
+}
+
+#email {
+  grid-area: 2/1/2/1;
+}
+
+#telefone {
+  grid-area: 3/1/3/1;
+}
+
+#nome, #email, #telefone {
+  margin-left: 5%;
+}
+
+#login {
+  grid-area: 1/1/1/2;
+  transform: translateX(19%);
+}
+
+#senha_login {
+  grid-area: 2/1/2/2;
+  transform: translateX(19%);
+}
+
+.botoes_cadastro {
+  grid-area: 1/4/2/4;
+  top: 5%;
+  left: 50%;
+  margin-top: 20px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .botoes_cadastro {
+    right: 40%;
+  }
+}
+
+#botoes_login {
+  grid-area: 1/3/2/5;
+  position: relative;
+  top: 200%;
+  left: -60%;
+}
+@media (max-width: 768px) {
+  #botoes_login {
+    left: -72.5%;
+  }
+}
+
+.btn_criarconta {
+  position: absolute;
+}
+
+input[type=submit], input[type=button] {
+  display: block;
+  font-weight: bold;
+  font-size: large !important;
+  text-decoration: none;
+  background: #333;
+  border-radius: 10px;
+  width: 150%;
+  height: 200%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  border: 3px solid #333;
+  transition: all 0.35s;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+}
+input[type=submit]:hover, input[type=button]:hover {
+  width: 125%;
+  border: 3px solid #000000;
+  background: transparent;
+  color: #000000;
+}
+
+#erroLogin {
+  font-size: large;
+  color: red;
+  color: rgb(222, 0, 0);
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: x-large;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: -50%;
+  top: 0;
+  z-index: 0;
+  transition: all 0.35s;
+  fill: #333;
+}
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  transition: all 0.35s;
+}
+
+input[type=submit]:hover + .icon {
+  border: 3px solid #000000;
+  right: -75%;
+}
+
+input[type=submit]:hover .icon svg {
+  z-index: 0;
+  fill: #000000;
+}
+
+.erro {
+  border: 2.5px solid red;
+}
+
+.roww {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.Gi {
+  width: 45%;
+  height: 45%;
+}
+
+.footer {
+  background-color: #ffcc00;
+  padding: 50px;
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  min-width: 100%;
+  margin-bottom: -50px;
+  margin-top: 2%;
+}
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 10%;
+  }
+}
+
+.footer .footer-col {
+  width: 30%;
+  padding: 0 15px;
+}
+@media (max-width: 768px) {
+  .footer .footer-col {
+    width: auto;
+    margin-bottom: 30px;
+  }
+}
+
+.footer .footer-col h4 {
+  font-size: 18px;
+  color: #000000;
+  text-transform: none;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer .footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #000000;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer .footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer .footer-col ul {
+  padding: 0;
+}
+
+.footer .footer-col ul li a {
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer .footer-col ul li a:hover {
+  color: #000000;
+  padding-left: 8px;
+}
+
+.footer .footer-col .redes-sociais a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer .footer-col .redes-sociais a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}/*# sourceMappingURL=estilologin.css.map */

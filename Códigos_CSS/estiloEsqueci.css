@@ -1,0 +1,85 @@
+* {
+  font-family: "Jost", sans-serif;
+}
+
+#formEsqueci {
+  align-items: center;
+  padding: 15px;
+}
+
+#esqueceu {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  top: 250;
+  font-size: xx-large;
+  text-transform: uppercase;
+}
+
+.spanEsqueci {
+  color: red;
+  font-size: large;
+  display: none;
+}
+
+#caixa_esqueci {
+  position: relative;
+  display: flex;
+  grid-template-columns: 50%;
+  grid-template-rows: repeat(3, 50%);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(254, 201, 0, 0.9647058824);
+  width: 50%;
+  right: -25%;
+  top: 250;
+  border-radius: 8px;
+  box-shadow: #000000;
+  box-shadow: 10px 10px 8px grey;
+}
+
+input {
+  font-size: large !important;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2.5px solid black;
+  margin: 1%;
+}
+
+input[type=submit], input[type=button] {
+  background: #333;
+  border-radius: 10px;
+  width: 35%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  border: 3px solid #333;
+  transition: ease-in-out 0.35s;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type=submit]:hover, input[type=button]:hover {
+  border: 3px solid #000000;
+  background: transparent;
+  color: #000000;
+}
+
+#Email {
+  background-color: rgba(254, 201, 0, 0.9647058824);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  top: 140;
+  font-size: x-large;
+}
+#Email #infoEmail {
+  text-align: left;
+  font-size: medium;
+  font-weight: bold;
+}/*# sourceMappingURL=estiloEsqueci.css.map */
